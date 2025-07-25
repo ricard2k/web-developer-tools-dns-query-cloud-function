@@ -1,4 +1,4 @@
-module github.com/GoogleCloudPlatform/golang-samples/functions/helloworld
+module github.com/ricard2k/web-developer-tools-dns-query-cloud-function
 
 go 1.16
 
