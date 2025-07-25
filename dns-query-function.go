@@ -51,14 +51,14 @@ func dnsQueryGet(w http.ResponseWriter, r *http.Request) {
 	m.SetQuestion(dns.Fqdn(fqdn), dnsType)
 
 	c := new(dns.Client)
-	r, _, err := c.Exchange(m, "8.8.8.8:53")
+	dnsResp, _, err := c.Exchange(m, "8.8.8.8:53")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprintf(w, "DNS query failed: %v", err)
 		return
 	}
 
-	for _, ans := range r.Answer {
+	for _, ans := range dnsResp.Answer {
 		fmt.Fprintf(w, "%v\n", ans)
 	}
 }
