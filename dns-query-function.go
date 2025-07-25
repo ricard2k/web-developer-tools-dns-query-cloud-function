@@ -11,7 +11,7 @@ import (
 )
 
 func init() {
-	functions.HTTP("DNSQueryGet", dnsQueryGet)
+	functions.HTTP("dnsQueryGet", dnsQueryGet)
 }
 
 // dnsQueryGet is an HTTP Cloud Function handler that performs DNS queries based on
